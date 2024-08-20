@@ -32,3 +32,28 @@ plt.ylabel('Altura pomedio en CM') #Nombre eje y
 
 plt.grid(True) #Indicamos que haya cuadrícula
 plt.show()
+
+
+#################################
+import numpy as np
+from scipy.optimize import fsolve
+import matplotlib.pyplot as plt
+def largo_cable(km):
+    return x*1.85
+km=0
+x=int(input("Ingrese la cantidad de hora que desea: "))
+print(f"EL total de cableado dentro de {x} horas es de {largo_cable(km):.1f}")
+
+def cable(x): #nombrar la función
+    return 1.85*x #definir función
+
+x = np.arange(0, 3568, 1) #Define valores para el eje x: desde, hasta, diferencia
+
+plt.plot(x, cable(x), color='b') #Indicar lo que se grafica: x, función
+plt.xlim(0 , 3568) #Indica desde-hasta en eje x
+plt.title('Cable instlado segun el tiempo transcurrido ') #Indica título del gráfico
+plt.xlabel('Tiempo (horas)') #Nombre eje x
+plt.ylabel('Cable instalado (KM)') #Nombre eje y
+
+plt.grid(True) #Indicamos que haya cuadrícula
+plt.show()
